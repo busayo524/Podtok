@@ -27,6 +27,7 @@ class User(db.Model, UserMixin):
     posts = db.relationship('Post', backref='author', lazy=True)
     podcasts = db.relationship('Podcast', backref='creator', lazy=True)
     audios = db.relationship('Audio', backref='author', lazy=True)
+    theme_preference = db.Column(db.String(10), default='light')
 
     def get_reset_token(self):
         s = URLSafeTimedSerializer(current_app.config['SECRET_KEY'])
