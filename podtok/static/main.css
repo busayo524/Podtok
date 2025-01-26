@@ -28,6 +28,7 @@ a:hover {
   --link-hover-color: #0056b3;
   --card-background: #ffffff;
   --footer-background: #f8f9fa;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 [data-theme="dark"] {
@@ -38,6 +39,7 @@ a:hover {
   --link-hover-color: #64b5f6;
   --card-background: #444444;
   --footer-background: #1a1a1a;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* === Landing Page === */
@@ -233,4 +235,9 @@ a.article-title:hover {
 .footer .btn-primary:hover {
   background-color: #0056b3;
   border-color: #0056b3;
+}
+
+/* === Theme Transitions === */
+body, .content-section, .navbar, .footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
