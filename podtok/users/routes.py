@@ -2,6 +2,7 @@ import os
 import secrets
 from PIL import Image
 from flask import Blueprint, render_template, url_for, flash, redirect, request, abort
+from flask import jsonify
 from flask_login import login_user, current_user, logout_user, login_required
 from podtok import db, bcrypt, mail
 from flask_mail import Message
@@ -75,6 +76,14 @@ def account():
         form.push_notifications.data = current_user.push_notifications
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file, form=form)
+
+@users.route("/update_theme", methods=['POST'])
+@login_required
+def update_theme():
+    theme = request.json.get('theme')
+    current_user.theme_preference = theme  # You'll need to add this field to your User model
+    db.session.commit()
+    return jsonify({'status': 'success'})
 
 
 @users.route("/user/<string:username>")
