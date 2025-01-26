@@ -1,0 +1,19 @@
+# Python cache and virtual environments
+*.pyc
+*.pyo
+__pycache__/
+myenv/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# VSCode settings
+.vscode/
+
+# System files
+.DS_Store
+*.swp
+=2.1.2
