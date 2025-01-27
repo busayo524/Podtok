@@ -22,7 +22,7 @@ File Uploads: Flask-Uploads
 ### Setup and Installation
 
 1. Clone the repository:
-git clone https://github.com/busayo524/podcasthub.git
+git clone https://github.com/busayo524/Podtok.git
 
 2. Create a virtual environment and activate it:
 python -m venv venv
