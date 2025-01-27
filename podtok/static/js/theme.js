@@ -14,7 +14,11 @@ function applyTheme(theme) {
     // Update button icon
     const themeIcon = document.getElementById('theme-icon');
     if (themeIcon) {
-        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun'; // Sun icon for dark theme
+        } else {
+            themeIcon.className = 'fas fa-moon'; // Moon icon for light theme
+        }
     }
 }
 
